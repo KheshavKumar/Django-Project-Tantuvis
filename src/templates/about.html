@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1> ABOUT PAGE </h1>
+<p>This is a paragraph </p>
+<p>
+    my_name variable and my_no and my_list variable from views passed:
+    {{my_name}},{{my_no}},
+    {{my_list }}
+</p>
+<ul>
+    {%for i in my_list%}
+        {% if i == 123 %}
+            <li>{{forloop.counter}}- {{i|add:22}}</li>
+        {%else %}
+            <li>{{forloop.counter}}-{{i}}</li>
+        {%endif%}
+
+    {%endfor%}
+</ul>
+ADDING TWO NUMBERS
+<form action=result_views method="POST">
+    {% csrf_token %}
+    Input First Number <input type="text" name="a"><br>
+    Input Second Number<input type="text" name="b"><br>
+    <input type='submit'>
+    </form>
+{%endblock content%}

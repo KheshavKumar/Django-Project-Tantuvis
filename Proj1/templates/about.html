@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content1%}
+<link href='https://fonts.googleapis.com/css?family=B612' rel='stylesheet'>
+<div class="home">
+
+    <!-- Home Slider -->
+    <div class="home_slider_container" style="height: 200px;">
+        <div class="owl-carousel owl-theme home_slider" style="height: 200px;">
+
+            <!-- Slide -->
+            <div class="owl-item" style="height: 200px;">
+                <!---->
+                <div class="background_image"
+                    style="background-image:url({% static 'images/Thread_background.jpg' %}); height: 200px;">
+                </div>
+                <div class="home_slider_content_container" style="height: 200px;">
+                    <div class="container " style="height: 200px;">
+                        <div class="row" style="height: 200px;">
+                            <div class="col" style="height: 200px;">
+                                <div class="home_slider_content" style="height: 200px;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%endblock%}
+            {%block content2%}
+            <html>
+
+            <body >
+                <H1 style="font-size: 100px; padding-left:50px ; padding-top: 100px;font-family: Oswald; color: goldenrod; font-weight: bold; background-color:teal;"> Tantuvis </H1>
+                <h2 style="font-family: Oswald; color: gold; padding-left: 67px; background-color: teal;"> For The Weavers</h2>
+                <div class="about_body" >   
+                    <div class="parallax_background parallax-window" data-parallax="scroll"
+            data-image-src="{% static 'images/about_weaver.jpg' %}" data-speed="0.8"></div>      
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="newsletter">
+                            
+                <p style="font-family: B612;"> 
+                    Tantuvi means weavers in Sanskrit the 3500 year old language of ancient India. The works of Hindu philosophy and and
+                    compositions were predominantly written in Sanskrit.
+                    In Modern India ,the language is now only heard as a recital of prayer or songs in temples but not
+                    spoken in India.
+                    One can relate weaving as ancient art of India in same level as Sanskrit to ancient India.
+                    Fortunately, it still exists and is still striving hard along with the modern textile industry.
+<br>
+<br>
+                    Who we are and how are we going to help the Tantuvis?
+
+                    We bring genuine handloom sarees from weavers to you. 
+                    Our objective is to help the Tantuvis to showcase their products to the world.
+                    'WE-AVE REVIVE... WE SURVIVE' is the voice of many weavers which we are getting it across to you.
+
+<br>
+<br>
+                    It is time that we as global community take action to make this industry survive and encourage the
+                    Tantuvis to not stop but weave more. Feel the weave and make them live.
+                </div>
+
+            </body>
+
+            </html>
+            {%endblock%}

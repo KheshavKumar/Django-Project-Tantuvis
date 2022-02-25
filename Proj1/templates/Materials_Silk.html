@@ -1,0 +1,78 @@
+{%extends 'base.html'%}
+<!--
+{%load static%}
+{% static 'images' as BaseURL%}-->
+{%block content1%}
+<div class="home">
+
+	<!-- Home Slider -->
+	<div class="home_slider_container" style="height: 200px;" >
+		<div class="owl-carousel owl-theme home_slider" style="height: 200px;" >
+
+			<!-- Slide -->
+			<div class="owl-item" style="height: 200px;">
+				<!---->
+				<div class="background_image" style="background-image:url({% static 'images/Thread_background.jpg' %}); height: 200px;">
+				</div>
+				<div class="home_slider_content_container"style="height: 200px;">
+					<div class="container " style="height: 200px;">
+						<div class="row" style="height: 200px;">
+							<div class="col" style="height: 200px;">
+								<div class="home_slider_content" style="height: 200px;">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{%endblock%}
+
+{%block content2%}
+    <div class="destinations" id="destinations" style="padding: 15px;">
+		<div class="container" >
+			<div class="row" style="height: fit-content;">
+				<div class="col text-center">
+					<div class="section_title"><h2>Silk</h2></div>
+					<div class="section_subtitle">
+						Strong. breathable. Elegant.  You cannot go wrong with Silk
+					<div>
+						
+				</div>
+			</div>
+			<div class="row destinations_row">
+				<div class="col">
+					<div class="destinations_container item_grid">
+
+						<!-- Destination -->
+						{%for item in all_items%}
+						<div class="destination item">
+                            {%if item.get_Material_display == 'Silk' %}
+							<div class="destination_image">
+                               
+								<!-- IF A STATIC URL DO LIKE BELOW
+                                <img src="{{BaseURL}}/{{dest.img}}" alt="">-->
+                                
+								<img src={{item.Image.url}} alt="">
+								{%if item.Offer%}
+								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+								{%endif%}
+								
+							</div>
+							<div class="destination_content">
+								<div class="destination_title"><a href="destinations.html">{{item.Title}}</a></div>
+                                <div class="destination_subtitle"><p>{{ item.Description }}</p></div>
+                                <div class="destination_subtitle"><p>{{ item.get_Clothe_Type_display  }}</p></div>
+								<div class="destination_subtitle"><p>{{ item.get_Material_display  }}</p></div>
+                                <div class="destination_price">
+									{% if item.Price == 0.0 %}
+									Contact For Price
+									{%else%}
+									From ₹{{item.Price}}
+									{%endif%}</div>
+                                
+                            </div>
+                            {% endif %}
+						</div>
+						{%endfor%}
+						{% endblock %}
